@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "AddRegister";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+<div class="container m-5">
+
+    <br />
+    <h3>Kayıt Olma Sayfası</h3>
+    <br />
+
+    <form method="post">
+        <input type="text" name="UserName" class="form-control" placeholder="Adınız giriniz" />
+        <br />
+        <input type="text" name="UserSurname" class="form-control" placeholder="Soyadını giriniz" />
+        <br />
+        <textarea name="UserAbout" class="form-control" rows="5" placeholder="Kendiniz hakkında bilgi veriniz"></textarea>
+        <br />
+        <input type="text" name="UserMail" class="form-control" placeholder="Mail adresi giriniz" />
+        <br />
+        <input type="text" name="UserPassword" class="form-control" placeholder="Şifrenizi giriniz" />
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+</div>

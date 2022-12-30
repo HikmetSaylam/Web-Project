@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "tYnUjl62buKQlG80v7rmERCi0lMpu1waLd20EZING5BLWG9Q0Ol5e+8TdHLTI3xTutgO5ONxZuU/2VmjiH4ppg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\insia\\Desktop\\webProje-main\\MvcProje\\MvcProje.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Error",
+      "message": "'Grpc.Core.2.46.5' paketi 'https://api.nuget.org/v3-flatcontainer/grpc.core/2.46.5/grpc.core.2.46.5.nupkg' kaynağından indirilemedi.\r\nİstek gönderilirken bir hata oluştu.\r\n  Uzak ad çözülemedi: 'api.nuget.org'"
+    }
+  ]
+}

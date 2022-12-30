@@ -1,0 +1,94 @@
+﻿@model MvcProje.Models.Entity.About
+@*
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+        <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>EvcilHayvanım - Admin Paneli</title>
+        <link rel="stylesheet" href="~/writer/assets/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="~/writer/assets/vendors/css/vendor.bundle.base.css">
+        <link rel="stylesheet" href="~/writer/assets/css/style.css">
+    </head>
+
+    
+}
+<body>
+    <div class="containet mt-2">
+        <form asp-action="Edit" asp-controller="Admin" method="post">
+            <input type="hidden" asp-for="AboutId" />
+            <div class="form-group">
+
+                <label>Açıklama: </label>
+                <input type="text" asp-for="AboutDetail" class="form-control" />
+                <label>ResimURL </label>
+                <input type="text" asp-for="AboutImage" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+            @Html.ActionLink("Geri Dön","Index")
+
+        </form>
+
+    </div>
+</body>
+
+*@
+
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+
+@using (Html.BeginForm("Edit", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Kimlik</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.AboutId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AboutDetail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AboutDetail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AboutDetail, "", new { @class = "text-danger" })
+            </div>
+        </div>     
+        <div class="form-group">
+            @Html.LabelFor(model => model.AboutImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="AboutImage" accept=".png, .jpg, .jpeg" class="form-control">
+                @Html.ValidationMessageFor(model => model.AboutImage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Geri Dön", "Index")
+</div>

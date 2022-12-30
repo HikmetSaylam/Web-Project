@@ -1,0 +1,28 @@
+﻿@using MvcProje.Models.Entity
+@model List<Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+
+<div class="tech-btm m-5">
+	<br />
+	<h4>HAYVAN KATEGORİLERİ</h4>
+	<ul class="list-group single">
+		<table class="table table-bordered">
+			<tr>
+				<th>Kategori ID</th>
+				<th>Kategori Adı</th>
+			</tr>
+			@foreach(var item in Model)
+			{
+				<tr>
+					<td>@item.CategoryID</td>
+					<td>@item.CategoryName</td>
+				</tr>
+			}
+		</table>
+	</ul>
+</div>

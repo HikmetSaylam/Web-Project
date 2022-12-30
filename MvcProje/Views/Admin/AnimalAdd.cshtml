@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "AnimalAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br/>
+<h3>Yeni Hayvan Ekleme Sayfası</h3>
+<br/>
+
+<form method="post">
+    <input type="text" name="AnimalName" class="form-control" placeholder="Hayvan adınız giriniz" />
+    <br />
+    <input type="text" name="AnimalAge" class="form-control" placeholder="Hayvanın yaşını giriniz" />
+    <br />
+    <textarea name="AnimalDescription" class="form-control" rows="5" placeholder="Hayvan hakkında bilgi veriniz" ></textarea>
+    <br />
+    <input type="text" name="AnimalImage" class="form-control" placeholder="Hayvanın fotoğrafını yükleyin" />
+    <br />
+    <input type="text" name="CategoryID" class="form-control" placeholder="CategoryID" />
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

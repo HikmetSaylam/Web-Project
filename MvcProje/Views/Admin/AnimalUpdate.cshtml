@@ -1,0 +1,22 @@
+﻿@model MvcProje.Models.Entity.Animal
+
+@{
+    ViewData["Title"] = "AnimalUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h3> Hayvan Güncelleme Sayfası</h3>
+<br />
+
+<form>
+   @Html.Label("Hayvan Adı")
+   @Html.TextBoxFor(x=> x.AnimalName, new{@class="form-control"})
+   @*//form-control responsive*@
+    @Html.Label("Hayvan Yaşı")
+    @Html.TextBoxFor(x=> x.AnimalAge, new{@class="form-control"})
+    <button class="btn btn-info">Güncelleme</button>
+</form>
+
+
+

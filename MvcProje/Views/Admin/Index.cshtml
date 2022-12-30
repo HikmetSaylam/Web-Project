@@ -1,0 +1,35 @@
+﻿@using MvcProje.Models.Entity
+@model List<Animal>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+
+<h2 style="color:#8E44AD" > Evcil Hayvan Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Hayvan Adı</th>
+        <th>Hayvan Özellikleri</th>
+        <th>SİL</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AnimalID</td>
+            <td>@item.AnimalName</td>
+            <td>@item.AnimalDescription</td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Admin/AnimalDelete/@item.AnimalID">
+                    <i class="fas fa-trash"></i>Sil
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<br/>
+<a href="/Admin/AnimalAdd/" class="btn btn-primary">Yeni Hayvan Ekle</a>
+
+

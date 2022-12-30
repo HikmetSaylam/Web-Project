@@ -1,0 +1,42 @@
+﻿@using  MvcProje.Models.Entity
+@model List<About>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container">
+    @foreach (var item in Model)
+    {
+
+        <div class="blog-grid-top m-5">
+
+
+            <div class="blog_info_left_grid">
+                
+                    <tr>
+                        <td>
+
+                            <img src="@Html.DisplayFor(modelItem=>item.AboutImage)" class="img-fluid" alt="">
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>item.AboutDetail)   
+                        </td>
+
+                        <td>
+                            <td></td>
+                    
+                            @Html.ActionLink("Güncelle","Edit",new{id=item.AboutId})
+                        </td>
+
+                    </tr>
+               
+            </div>
+           
+            <p>
+                
+            </p>
+            <a href="/Admin/Index/" class="btn btn-secondary read-m">Evcil Hayvan Listesine Git</a>
+        </div>
+    }
+</div>
